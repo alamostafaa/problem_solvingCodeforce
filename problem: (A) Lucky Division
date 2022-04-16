@@ -1,0 +1,29 @@
+#include <iostream>
+ 
+using namespace std;
+ 
+int main()
+{
+    int lucky_numbers[] = { 4,7,47,74,44,444,447,474,477,777,774,744};
+    int num;
+    bool lucky = false;
+    cin >> num;
+    int c;
+    if (!lucky) {
+        for (int i = 0; i < 12; ++i) {
+            if (num % lucky_numbers[i] == 0) {
+                lucky = true;
+                break;
+            };
+        }
+    };
+    
+    if (lucky) {
+        cout << "YES";
+    }
+    else
+        cout << "NO";
+ 
+	return 0;
+ 
+}
