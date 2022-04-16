@@ -1,0 +1,42 @@
+include <iostream>
+#include <cstring>
+using namespace std;
+ 
+int main()
+{
+	char ch[100];
+	cin >> ch;
+	string str ="";
+	bool flag = false;
+	int len = strlen(ch), h = 0, e = 0, l = 0, o = 0, outsider =0;
+	
+	for (int i = 0; i < len; ++i) {
+		if (ch[i] == 'h') {
+			if (h == 1)
+				continue;
+			else
+				++h;
+		}
+		else if (ch[i] == 'e') {
+			if (h == 1 && e == 0)
+				++e;
+		}
+		else if (ch[i] == 'l') {
+			if (h == 1 && e == 1 && l != 2)
+				++l;
+		}
+		else if (ch[i] == 'o') {
+			if (h == 1 && e == 1 && l == 2 && o == 0)
+				++o;
+		}
+		if (h == 1 && e == 1 && l == 2 && o == 1)
+			flag = true;
+			
+	}
+	if (flag)
+		cout << "YES";
+	else 
+		cout<<"NO";
+	return 0;
+ 
+}
