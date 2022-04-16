@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+ 
+int main()
+{
+    int n, h, with =0, he;
+    cin >> n >> h;
+    while (n > 0)
+    {
+        cin >> he;
+        if (he > h) {
+            with += 2;
+        }
+        else
+            with += 1;
+        --n;
+    }
+    cout << with;
+    return 0;
+}
